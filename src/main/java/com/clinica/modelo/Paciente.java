@@ -20,6 +20,7 @@ public class Paciente {
     private String nombre;
 @Size(min = 10)
 @NotBlank
+@Pattern(regexp = "^\\d+$", message = "solo se admiten numeros")
     private String cedula;
 @NotBlank
 @Pattern(regexp = "^[\\w\\.-]+@[a-zA-Z\\d\\.-]+\\.[a-zA-Z]{2,}$",message =
@@ -31,12 +32,15 @@ public class Paciente {
 @NotBlank
     private String genero;
 
+@Pattern(regexp = "^\\d+$", message = "solo se admiten numeros")
     @Size(min = 10)
     private String telefono;
     @Size(min = 10,max = 45)
     private String direccion;
 
     private Boolean antMedicos;
+
+    @Pattern(regexp = "^\\d+$", message = "solo se admiten numeros")
     @Size(min = 10)
     private String contEmergencia;
 @NotBlank

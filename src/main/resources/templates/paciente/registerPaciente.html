@@ -33,96 +33,145 @@
     </div>
 </nav>
 <!-- Registro de Paciente -->
-<form class="max-w-sm mx-auto">
+<form action="/paciente/guardar" method="post" th:object="${paciente}"
+        class="max-w-sm mx-auto">
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
-        <input type="text" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        <input type="text" th:field="*{nombre}"
+               id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Nombre" required />
+        <span
+                th:if="${#fields.hasErrors('nombre')}" th:errores="*{nombre}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de nombre</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Cédula</label>
-        <input type="text" id="cedula" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        <input type="text" th:field="*{cedula}"
+               id="cedula" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su cédula" required />
+        <span
+                th:if="${#fields.hasErrors('cedula')}" th:errores="*{cedula}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de Cedula</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Correo</label>
-        <input type="email" id="correo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        <input type="email" th:field="*{correo}"
+               id="correo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Correo" required />
+        <span
+                th:if="${#fields.hasErrors('correo')}" th:errores="*{correo}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de Correo</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Fecha de nacimiento</label>
-        <input type="date" id="fechaNacimiento" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        <input type="date" th:field="*{fechaNacimiento}"
+               id="fechaNacimiento" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                required />
+        <span
+                th:if="${#fields.hasErrors('fechaNacimiento')}" th:errores="*{fechaNacimiento}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de Fecha de Nacimiento</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Género</label>
         <div class="flex items-center mb-2">
-            <input type="radio" id="masculino" name="genero" value="Masculino" class="mr-2">
+            <input type="radio" th:field="*{genero}"
+                   id="masculino" name="genero" value="Masculino" class="mr-2">
             <label for="masculino" class="text-sm text-gray-900">Masculino</label>
         </div>
         <div class="flex items-center">
-            <input type="radio" id="femenino" name="genero" value="Femenino" class="mr-2">
+            <input type="radio" th:field="*{genero}"
+                   id="femenino" name="genero" value="Femenino" class="mr-2">
             <label for="femenino" class="text-sm text-gray-900">Femenino</label>
         </div>
+        <span
+                th:if="${#fields.hasErrors('genero')}" th:errores="*{genero}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de Genero</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Teléfono de contacto</label>
-        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        <input type="text" th:field="*{telefono}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Telefono" required />
+        <span
+                th:if="${#fields.hasErrors('telefono')}" th:errores="*{telefono}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de Telefono</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Dirección</label>
-        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        <input type="text" th:field="*{direccion}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su direccion:" required />
+        <span
+                th:if="${#fields.hasErrors('direccion')}" th:errores="*{direccion}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de Direccion</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Antecedentes médicos</label>
         <div class="flex items-center">
-            <input type="checkbox" id="antecedentes" class="mr-2">
+            <input type="checkbox" th:field="*{antMedicos}"
+                   id="antecedentes" class="mr-2">
             <label for="antecedentes" class="text-sm text-gray-900">Sí</label>
         </div>
+        <span
+                th:if="${#fields.hasErrors('antMedicos')}" th:errores="*{antMedicos}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de Antecedentes</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Contacto de emergencia</label>
-        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        <input type="text" th:field="*{contEmergencia}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Contacto de emergencia" required />
+        <span
+                th:if="${#fields.hasErrors('contEmergencia')}" th:errores="*{contEmergencia}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de Contacto de Emergencia</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Grupo sanguíneo</label>
         <div class="flex flex-wrap">
             <div class="flex items-center mr-4">
-                <input type="radio" id="grupoA+" name="grupoSanguineo" value="A+" class="mr-2">
+                <input type="radio" th:field="*{grupoSanguineo}"
+                       id="grupoA+" name="grupoSanguineo" value="A+" class="mr-2">
                 <label for="grupoA+" class="text-sm text-gray-900">A+</label>
             </div>
             <div class="flex items-center mr-4">
-                <input type="radio" id="grupoA-" name="grupoSanguineo" value="A-" class="mr-2">
+                <input type="radio" th:field="*{grupoSanguineo}"
+                       id="grupoA-" name="grupoSanguineo" value="A-" class="mr-2">
                 <label for="grupoA-" class="text-sm text-gray-900">A-</label>
             </div>
             <div class="flex items-center mr-4">
-                <input type="radio" id="grupoB+" name="grupoSanguineo" value="B+" class="mr-2">
+                <input type="radio" th:field="*{grupoSanguineo}"
+                       id="grupoB+" name="grupoSanguineo" value="B+" class="mr-2">
                 <label for="grupoB+" class="text-sm text-gray-900">B+</label>
             </div>
             <div class="flex items-center mr-4">
-                <input type="radio" id="grupoB-" name="grupoSanguineo" value="B-" class="mr-2">
+                <input type="radio" th:field="*{grupoSanguineo}"
+                       id="grupoB-" name="grupoSanguineo" value="B-" class="mr-2">
                 <label for="grupoB-" class="text-sm text-gray-900">B-</label>
             </div>
             <div class="flex items-center mr-4">
-                <input type="radio" id="grupoAB+" name="grupoSanguineo" value="AB+" class="mr-2">
+                <input type="radio" th:field="*{grupoSanguineo}"
+                       id="grupoAB+" name="grupoSanguineo" value="AB+" class="mr-2">
                 <label for="grupoAB+" class="text-sm text-gray-900">AB+</label>
             </div>
             <div class="flex items-center mr-4">
-                <input type="radio" id="grupoAB-" name="grupoSanguineo" value="AB-" class="mr-2">
+                <input type="radio" th:field="*{grupoSanguineo}"
+                       id="grupoAB-" name="grupoSanguineo" value="AB-" class="mr-2">
                 <label for="grupoAB-" class="text-sm text-gray-900">AB-</label>
             </div>
             <div class="flex items-center mr-4">
-                <input type="radio" id="grupoO+" name="grupoSanguineo" value="O+" class="mr-2">
+                <input type="radio" th:field="*{grupoSanguineo}"
+                       id="grupoO+" name="grupoSanguineo" value="O+" class="mr-2">
                 <label for="grupoO+" class="text-sm text-gray-900">O+</label>
             </div>
             <div class="flex items-center">
-                <input type="radio" id="grupoO-" name="grupoSanguineo" value="O-" class="mr-2">
+                <input type="radio" th:field="*{grupoSanguineo}"
+                       id="grupoO-" name="grupoSanguineo" value="O-" class="mr-2">
                 <label for="grupoO-" class="text-sm text-gray-900">O-</label>
             </div>
         </div>
+        <span
+                th:if="${#fields.hasErrors('grupoSanguineo')}" th:errores="*{grupoSanguineo}"
+                class="block mb-2 text-sm font-medium text-gray-900">Error de Grupo Sanguineo</span>
     </div>
 
     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
