@@ -32,68 +32,103 @@
         </div>
     </div>
 </nav>
-<!--Registro de Paciente-->
+<!-- Registro de Paciente -->
 <form class="max-w-sm mx-auto">
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Nombre</label>
-        <input type="text" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        <label class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
+        <input type="text" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Nombre" required />
     </div>
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Cédula</label>
-        <input type="text" id="cedula" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        <label class="block mb-2 text-sm font-medium text-gray-900">Cédula</label>
+        <input type="text" id="cedula" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su cédula" required />
     </div>
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Correo</label>
-        <input type="email" id="correo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        <label class="block mb-2 text-sm font-medium text-gray-900">Correo</label>
+        <input type="email" id="correo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Correo" required />
     </div>
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Fecha de nacimiento</label>
-        <input type="date" id="fechaNacimiento" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        <label class="block mb-2 text-sm font-medium text-gray-900">Fecha de nacimiento</label>
+        <input type="date" id="fechaNacimiento" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                required />
     </div>
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Género</label>
-        <input type="radio"  value="Masculino">Masculino
-        <input type="radio"  value="Femenino">Femenino
+        <label class="block mb-2 text-sm font-medium text-gray-900">Género</label>
+        <div class="flex items-center mb-2">
+            <input type="radio" id="masculino" name="genero" value="Masculino" class="mr-2">
+            <label for="masculino" class="text-sm text-gray-900">Masculino</label>
+        </div>
+        <div class="flex items-center">
+            <input type="radio" id="femenino" name="genero" value="Femenino" class="mr-2">
+            <label for="femenino" class="text-sm text-gray-900">Femenino</label>
+        </div>
     </div>
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Teléfono de contacto</label>
-        <input type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        <label class="block mb-2 text-sm font-medium text-gray-900">Teléfono de contacto</label>
+        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Telefono" required />
     </div>
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Dirección</label>
-        <input type="text" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        <label class="block mb-2 text-sm font-medium text-gray-900">Dirección</label>
+        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su direccion:" required />
     </div>
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Antecedentes médicos</label>
-        <input type="checkbox" >si
-        <br>
+        <label class="block mb-2 text-sm font-medium text-gray-900">Antecedentes médicos</label>
+        <div class="flex items-center">
+            <input type="checkbox" id="antecedentes" class="mr-2">
+            <label for="antecedentes" class="text-sm text-gray-900">Sí</label>
+        </div>
     </div>
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Contacto de emergencia</label>
-        <input type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        <label class="block mb-2 text-sm font-medium text-gray-900">Contacto de emergencia</label>
+        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Contacto de emergencia" required />
     </div>
     <div class="mb-5">
-        <label  class="block mb-2 text-sm font-medium text-gray-900 ">Grupo sanguíneo</label>
-        <input type="radio"  value="A+">A+
-        <input type="radio"  value="A-">A-
-        <input type="radio"  value="B+">B+
-        <input type="radio"  value="B-">B-
-        <input type="radio"  value="AB+">AB+
-        <input type="radio"  value="AB-">AB-
-        <input type="radio"  value="O+">O+
-        <input type="radio"  value="O-">O-
+        <label class="block mb-2 text-sm font-medium text-gray-900">Grupo sanguíneo</label>
+        <div class="flex flex-wrap">
+            <div class="flex items-center mr-4">
+                <input type="radio" id="grupoA+" name="grupoSanguineo" value="A+" class="mr-2">
+                <label for="grupoA+" class="text-sm text-gray-900">A+</label>
+            </div>
+            <div class="flex items-center mr-4">
+                <input type="radio" id="grupoA-" name="grupoSanguineo" value="A-" class="mr-2">
+                <label for="grupoA-" class="text-sm text-gray-900">A-</label>
+            </div>
+            <div class="flex items-center mr-4">
+                <input type="radio" id="grupoB+" name="grupoSanguineo" value="B+" class="mr-2">
+                <label for="grupoB+" class="text-sm text-gray-900">B+</label>
+            </div>
+            <div class="flex items-center mr-4">
+                <input type="radio" id="grupoB-" name="grupoSanguineo" value="B-" class="mr-2">
+                <label for="grupoB-" class="text-sm text-gray-900">B-</label>
+            </div>
+            <div class="flex items-center mr-4">
+                <input type="radio" id="grupoAB+" name="grupoSanguineo" value="AB+" class="mr-2">
+                <label for="grupoAB+" class="text-sm text-gray-900">AB+</label>
+            </div>
+            <div class="flex items-center mr-4">
+                <input type="radio" id="grupoAB-" name="grupoSanguineo" value="AB-" class="mr-2">
+                <label for="grupoAB-" class="text-sm text-gray-900">AB-</label>
+            </div>
+            <div class="flex items-center mr-4">
+                <input type="radio" id="grupoO+" name="grupoSanguineo" value="O+" class="mr-2">
+                <label for="grupoO+" class="text-sm text-gray-900">O+</label>
+            </div>
+            <div class="flex items-center">
+                <input type="radio" id="grupoO-" name="grupoSanguineo" value="O-" class="mr-2">
+                <label for="grupoO-" class="text-sm text-gray-900">O-</label>
+            </div>
+        </div>
     </div>
-
 
     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
 </form>
+
+
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 </html>
