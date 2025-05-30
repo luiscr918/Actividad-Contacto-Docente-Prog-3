@@ -14,35 +14,40 @@ import java.util.Date;
 @Getter
 @Setter
 public class Paciente {
-
-@NotBlank
-@Size(min = 3,max = 15)
+    //Validación de nombre
+    @NotBlank
+    @Size(min = 3, max = 15)
     private String nombre;
-@Size(min = 10)
-@NotBlank
-@Pattern(regexp = "^\\d+$", message = "solo se admiten numeros")
+    //Validación de cedula
+    @Size(min = 10)
+    @NotBlank
+    @Pattern(regexp = "^\\d+$", message = "solo se admiten numeros")
     private String cedula;
-@NotBlank
-@Pattern(regexp = "^[\\w\\.-]+@[a-zA-Z\\d\\.-]+\\.[a-zA-Z]{2,}$",message =
-    "Por favor, ingresa un correo electrónico válido. Debe tener el formato: nombre@dominio.com")
+    //Validación de correo
+    @NotBlank
+    @Pattern(regexp = "^[\\w\\.-]+@[a-zA-Z\\d\\.-]+\\.[a-zA-Z]{2,}$", message =
+            "Por favor, ingresa un correo electrónico válido. Debe tener el formato: nombre@dominio.com")
     private String correo;
-
-@DateTimeFormat(pattern = "yyyy-mm-dd")
+    //Validación de fecha de nacimiento
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date fechaNacimiento;
-@NotBlank
+    //Validación de genero
+    @NotBlank
     private String genero;
-
-@Pattern(regexp = "^\\d+$", message = "solo se admiten numeros")
+    //Validación de telefono
+    @Pattern(regexp = "^\\d+$", message = "solo se admiten numeros")
     @Size(min = 10)
     private String telefono;
-    @Size(min = 10,max = 45)
+    //Validación de direccion
+    @Size(min = 10, max = 45)
     private String direccion;
-
+    //no tiene validación
     private Boolean antMedicos;
-
+    //Validación de contacto de emergencia
     @Pattern(regexp = "^\\d+$", message = "solo se admiten numeros")
     @Size(min = 10)
     private String contEmergencia;
-@NotBlank
+    //Validación de grupo sanguineo
+    @NotBlank
     private String grupoSanguineo;
 }
