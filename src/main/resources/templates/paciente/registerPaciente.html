@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Title</title>
+    <link rel="icon" href="/imgs/logoPage.png" />
+    <title>Registro Pacientes</title>
 </head>
 <body>
 <!--Barra de navegacion-->
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Flowbite</span>
+        <a th:href=@{/} class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/imgs/logoClinica.png" class="h-8" alt="Flowbite Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Clínica Vida Sana</span>
         </a>
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -36,40 +37,40 @@
 <form action="/paciente/guardar" method="post" th:object="${paciente}"
         class="max-w-sm mx-auto">
     <div class="mb-5">
-        <label class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
+        <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
         <input type="text" th:field="*{nombre}"
                id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Nombre" required />
         <span
                 th:if="${#fields.hasErrors('nombre')}" th:errores="*{nombre}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de nombre</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de nombre</span>
     </div>
     <div class="mb-5">
-        <label class="block mb-2 text-sm font-medium text-gray-900">Cédula</label>
+        <label for="cedula" class="block mb-2 text-sm font-medium text-gray-900">Cédula</label>
         <input type="text" th:field="*{cedula}"
                id="cedula" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su cédula" required />
         <span
                 th:if="${#fields.hasErrors('cedula')}" th:errores="*{cedula}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de Cedula</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de Cedula</span>
     </div>
     <div class="mb-5">
-        <label class="block mb-2 text-sm font-medium text-gray-900">Correo</label>
+        <label for="correo" class="block mb-2 text-sm font-medium text-gray-900">Correo</label>
         <input type="email" th:field="*{correo}"
                id="correo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Correo" required />
         <span
                 th:if="${#fields.hasErrors('correo')}" th:errores="*{correo}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de Correo</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de Correo</span>
     </div>
     <div class="mb-5">
-        <label class="block mb-2 text-sm font-medium text-gray-900">Fecha de nacimiento</label>
+        <label for="fechaNacimiento" class="block mb-2 text-sm font-medium text-gray-900">Fecha de nacimiento</label>
         <input type="date" th:field="*{fechaNacimiento}"
                id="fechaNacimiento" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                required />
         <span
                 th:if="${#fields.hasErrors('fechaNacimiento')}" th:errores="*{fechaNacimiento}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de Fecha de Nacimiento</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de Fecha de Nacimiento</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Género</label>
@@ -85,25 +86,26 @@
         </div>
         <span
                 th:if="${#fields.hasErrors('genero')}" th:errores="*{genero}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de Genero</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de Genero</span>
     </div>
     <div class="mb-5">
-        <label class="block mb-2 text-sm font-medium text-gray-900">Teléfono de contacto</label>
+        <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900">Teléfono de contacto</label>
         <input type="text" th:field="*{telefono}"
+               id="telefono"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Telefono" required />
         <span
                 th:if="${#fields.hasErrors('telefono')}" th:errores="*{telefono}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de Telefono</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de Telefono</span>
     </div>
     <div class="mb-5">
-        <label class="block mb-2 text-sm font-medium text-gray-900">Dirección</label>
-        <input type="text" th:field="*{direccion}"
+        <label for="direccion" class="block mb-2 text-sm font-medium text-gray-900">Dirección</label>
+        <input type="text" id="direccion" th:field="*{direccion}"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su direccion:" required />
         <span
                 th:if="${#fields.hasErrors('direccion')}" th:errores="*{direccion}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de Direccion</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de Direccion</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Antecedentes médicos</label>
@@ -114,16 +116,16 @@
         </div>
         <span
                 th:if="${#fields.hasErrors('antMedicos')}" th:errores="*{antMedicos}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de Antecedentes</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de Antecedentes</span>
     </div>
     <div class="mb-5">
-        <label class="block mb-2 text-sm font-medium text-gray-900">Contacto de emergencia</label>
-        <input type="text" th:field="*{contEmergencia}"
+        <label for="telEmergencia" class="block mb-2 text-sm font-medium text-gray-900">Contacto de emergencia</label>
+        <input type="text" id="telEmergencia" th:field="*{contEmergencia}"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                placeholder="Ingrese su Contacto de emergencia" required />
         <span
                 th:if="${#fields.hasErrors('contEmergencia')}" th:errores="*{contEmergencia}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de Contacto de Emergencia</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de Contacto de Emergencia</span>
     </div>
     <div class="mb-5">
         <label class="block mb-2 text-sm font-medium text-gray-900">Grupo sanguíneo</label>
@@ -171,7 +173,7 @@
         </div>
         <span
                 th:if="${#fields.hasErrors('grupoSanguineo')}" th:errores="*{grupoSanguineo}"
-                class="block mb-2 text-sm font-medium text-gray-900">Error de Grupo Sanguineo</span>
+                class="block mb-2 text-sm font-medium text-red-600">Error de Grupo Sanguineo</span>
     </div>
 
     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>

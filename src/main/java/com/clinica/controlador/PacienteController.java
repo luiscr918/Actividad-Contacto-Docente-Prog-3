@@ -28,6 +28,5 @@ public class PacienteController {
         }else{
             return "paciente/historialPaciente";
         }
-
     }
 }
